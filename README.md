@@ -7,6 +7,7 @@ This is the repo for is-probably.gay subdomain registration!
 3. Fill in the registration form
 4. Submit the issue
 5. After some minutes, your domain should be ready to use!
+
 Each account can only register five subdomains.
 
 # How to Edit DNS Record
