@@ -9,8 +9,7 @@ body:
     id: domain
     attributes:
       label: Subdomain Name
-      description: What subdomain do you want to delete?
-      placeholder: ex. something.is-probably.gay
+      description: What subdomain do you want to delete? ex. something.is-probably.gay
       value: ".is-probably.gay"
     validations:
       required: true
@@ -27,6 +26,6 @@ body:
     id: confirm
     attributes:
       label: Type your domain name + DELETE to confirm
-      placeholder: ex. something.is-probably.gay DELETE
+      description: ex. something.is-probably.gay DELETE
     validations:
       required: true
