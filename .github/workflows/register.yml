@@ -7,7 +7,7 @@ on:
 jobs:
   Register:
     runs-on: ubuntu-latest
-    if: ${{ github.event.issue.body }}=='Registration'
+    if: github.event.issue.title == 'Register'
     permissions:
       issues: write
     steps:
