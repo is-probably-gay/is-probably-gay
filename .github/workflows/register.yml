@@ -22,6 +22,7 @@ jobs:
       run: |
             npm i cloudflare
             node --no-deprecation register > data.csv
+            cat data.csv
             comment=$(cut -d "|" -f 2 data.csv)
             reason=$(cut -d "|" -f 1 data.csv)
             gh issue close https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }} -c $comment -r $reason
