@@ -7,7 +7,7 @@ assignees: []
 body:
   - type: markdown
     attributes:
-      value: "<!\u2D\u2Ddomain\u2D\u2D>"
+      value: "<!\u002D\u002Ddomain\u002D\u002D>"
   - type: input
     id: domain
     attributes:
@@ -19,7 +19,7 @@ body:
       required: true
   - type: markdown
     attributes:
-      value: "<!\u2D\u2Ddomain-end\u2D\u2D><!\u2D\u2Ddns\u2D\u2D>"
+      value: "<!\u002D\u002Ddomain-end\u002D\u002D><!\u002D\u002Ddns\u002D\u002D>"
   - type: input
     id: dns
     attributes:
@@ -29,7 +29,7 @@ body:
       required: true
    - type: markdown
     attributes:
-      value: "<!\u2D\u2Ddns-end\u2D\u2D><!\u2D\u2Dagreement\u2D\u2D>"
+      value: "<!\u002D\u002Ddns-end\u002D\u002D><!\u002D\u002Dagreement\u002D\u002D>"
   - type: checkboxes
     id: checked
     attributes:
@@ -41,4 +41,4 @@ body:
           required: true
   - type: markdown
     attributes:
-      value: "<!\u2D\u2Dagreement-end\u2D\u2D>"
+      value: "<!\u002D\u002Dagreement-end\u002D\u002D>"
