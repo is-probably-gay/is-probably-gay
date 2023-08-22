@@ -22,4 +22,4 @@ jobs:
       run: |
             npm i cloudflare
             node register > data.csv
-            gh issue close https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }} -c `cut -d , -f 2 data.csv` -r `cut -d , -f 1 data.csv`
+            gh issue close https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }} -c `cut -d "|" -f 2 data.csv` -r `cut -d "|" -f 1 data.csv`
