@@ -8,25 +8,37 @@ body:
   - type: input
     id: domain
     attributes:
-      label: Subdomain Name
+      label: Subdomain Name <!--subdomain-->
       description: What subdomain do you want to register?
       placeholder: ex. something.is-probably.gay
       value: ".is-probably.gay"
     validations:
       required: true
+  - type: markdown
+    attributes:
+      value: |
+        <!--subdomain-end-->
   - type: input
     id: dns
     attributes:
-      label: DNS Record
+      label: DNS Record <!--dns-->
       description: Where should the domain point to? You can type in either an IP address or a domain, and it will automatically detect whether to use A, AAAA, or CNAME.
     validations:
       required: true
+  - type: markdown
+    attributes:
+      value: |
+        <!--dns-end-->
   - type: checkboxes
     id: checked
     attributes:
-      label: Agreement
+      label: Agreement <!--agreement-->
       options:
         - label: I have ensured that no one registered this subdomain
           required: true
         - label: I have ensured that I did not reach the five subdomain limit
           required: true
+  - type: markdown
+    attributes:
+      value: |
+        <!--agreement-end-->
