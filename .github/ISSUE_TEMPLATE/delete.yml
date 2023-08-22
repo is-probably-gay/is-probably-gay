@@ -1,0 +1,30 @@
+name: Delete
+description: Delete a Subdomain
+title: "Delete"
+labels: []
+projects: []
+assignees: []
+body:
+  - type: input
+    id: domain
+    attributes:
+      label: Subdomain Name
+      description: What subdomain do you want to delete?
+      placeholder: ex. something.is-probably.gay
+      value: ".is-probably.gay"
+    validations:
+      required: true
+  - type: checkboxes
+    id: checked
+    attributes:
+      label: Agreement
+      options:
+        - label: I have ensured that this subdomain is mine
+          required: true
+  - type: input
+    id: domain
+    attributes:
+      label: Type your domain name + DELETE to confirm
+      placeholder: ex. something.is-probably.gay DELETE
+    validations:
+      required: true
