@@ -30,7 +30,7 @@ if (
   )
 ) {
   return console.log(
-    "2|Format invalid! It's usually because you didn't check the agreements, or the domain/record you entered is invalid!"
+    "2,Format invalid! It's usually because you didn't check the agreements, or the domain/record you entered is invalid!"
   )
 }
 var flare = require("cloudflare")
@@ -49,7 +49,7 @@ cf.dnsRecords.browse("2bf779292ec80723b8b7a94bb651ea7d").then((records) => {
   })
   if (filtered[0]) {
     return console.log(
-      "2|This subdomain was taken, please try another subdomain!"
+      "2,This subdomain was taken, please try another subdomain!"
     )
   }
   var type = "invalid"
@@ -57,7 +57,7 @@ cf.dnsRecords.browse("2bf779292ec80723b8b7a94bb651ea7d").then((records) => {
   if (ipv4.test(array[1][1])) type = "A"
   if (ipv6.test(array[1][1])) type = "AAAA"
   if (type == "invalid") {
-    return console.log("2|The record destination you entered is invalid!")
+    return console.log("2,The record destination you entered is invalid!")
   }
   cf.dnsRecords
     .add("2bf779292ec80723b8b7a94bb651ea7d", {
@@ -70,10 +70,10 @@ cf.dnsRecords.browse("2bf779292ec80723b8b7a94bb651ea7d").then((records) => {
     })
     .then((response) => {
       if (!response.success) {
-        return console.log(`2|CloudFlare Error:${response.errors[0].message}`)
+        return console.log(`2,CloudFlare Error:${response.errors[0].message}`)
       }
       console.log(
-        "1|Your subdomain has been successfully registered! Enjoy it!"
+        "1,Your subdomain has been successfully registered! Enjoy it!"
       )
     })
 })
