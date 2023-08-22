@@ -72,7 +72,7 @@ cf.dnsRecords.browse("2bf779292ec80723b8b7a94bb651ea7d").then((records) => {
         if (!response.success) {
           return console.log(`not planned|CloudFlare Error:${response.errors[0].message}`)
         }
-        console.log(
+        return console.log(
           "completed|Your subdomain has been successfully edited!"
         )
       })
