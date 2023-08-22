@@ -2,7 +2,7 @@
 This is the repo for is-probably.gay subdomain registration!
 
 # How to Register
-1. Click [this](https://github.com/is-probably-gay/is-probably-gay/issues/new?template=register.yml) link to open an issue with a template (coming soon)
+1. Click [this](https://github.com/is-probably-gay/is-probably-gay/issues/new?template=register.yml&title=Registration) link to open an issue with a template
 2. Search for issues and make sure others don't register the domain you wanted
 3. Fill in the registration form
 4. Submit the issue
