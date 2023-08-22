@@ -5,9 +5,9 @@ on:
     types: [opened]
 
 jobs:
-  NewWord:
+  Register:
     runs-on: ubuntu-latest
-    if: equals(github.event.issue.body, 'Registration')
+    if: ${{ github.event.issue.body }}=='Registration'
     steps:
 
     - name: Checkout
