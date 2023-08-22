@@ -18,6 +18,8 @@ jobs:
         REPOSITORY: ${{ github.repository }}
         EVENT_ISSUE_NUMBER: ${{ github.event.issue.number }}
         EVENT_ISSUE_TITLE: ${{ github.event.issue.title }}
+        EVENT_ISSUE_BODY: ${{ github.event.issue.body }}
+        EVENT_ISSUE_DESCRIPTION: ${{ github.event.issue.description }}
         EVENT_USER_LOGIN: ${{ github.event.issue.user.login }}
       run: |
             echo "${{ github.event.issue.description }}"
