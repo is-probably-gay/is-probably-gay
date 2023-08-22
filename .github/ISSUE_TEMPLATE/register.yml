@@ -24,6 +24,9 @@ body:
   - type: checkboxes
     id: checked
     attributes:
+      label: Agreement
       options:
-        - label: I have checked that no one registered this subdomain
+        - label: I have ensured that no one registered this subdomain
+          required: true
+        - label: I have ensured that I did not reach the five subdomain limit
           required: true
