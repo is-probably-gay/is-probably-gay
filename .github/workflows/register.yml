@@ -8,6 +8,8 @@ jobs:
   Register:
     runs-on: ubuntu-latest
     if: ${{ github.event.issue.body }}=='Registration'
+    permissions:
+      issues: write
     steps:
 
     - name: Checkout
