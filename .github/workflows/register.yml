@@ -20,5 +20,5 @@ jobs:
         EVENT_ISSUE_TITLE: ${{ github.event.issue.title }}
         EVENT_USER_LOGIN: ${{ github.event.issue.user.login }}
       run: |
-            echo "${{ github.event.issue.properties.body.description }}"
+            echo "${{ github.event.issue.description }}"
             gh issue close https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }}
