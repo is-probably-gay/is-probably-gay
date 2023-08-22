@@ -5,10 +5,14 @@ labels: []
 projects: []
 assignees: []
 body:
+  - type: markdown
+    attributes:
+      value: |
+        <!--domain-->
   - type: input
     id: domain
     attributes:
-      label: Subdomain Name <!--subdomain-->
+      label: Subdomain Name
       description: What subdomain do you want to register?
       placeholder: ex. something.is-probably.gay
       value: ".is-probably.gay"
@@ -17,22 +21,22 @@ body:
   - type: markdown
     attributes:
       value: |
-        <!--subdomain-end-->
+        <!--domain-end--><!--dns-->
   - type: input
     id: dns
     attributes:
-      label: DNS Record <!--dns-->
+      label: DNS Record
       description: Where should the domain point to? You can type in either an IP address or a domain, and it will automatically detect whether to use A, AAAA, or CNAME.
     validations:
       required: true
-  - type: markdown
+   - type: markdown
     attributes:
       value: |
-        <!--dns-end-->
+        <!--dns-end--><!--agreement-->
   - type: checkboxes
     id: checked
     attributes:
-      label: Agreement <!--agreement-->
+      label: Agreement
       options:
         - label: I have ensured that no one registered this subdomain
           required: true
