@@ -14,15 +14,17 @@ body:
       value: ".is-probably.gay"
     validations:
       required: true
+      
   - type: checkboxes
-    id: checked
+    id: check
     attributes:
       label: Agreement
       options:
         - label: I have ensured that this subdomain is mine
           required: true
+          
   - type: input
-    id: domain
+    id: confirm
     attributes:
       label: Type your domain name + DELETE to confirm
       placeholder: ex. something.is-probably.gay DELETE
