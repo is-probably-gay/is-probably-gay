@@ -9,8 +9,7 @@ body:
     id: domain
     attributes:
       label: Subdomain Name
-      description: What subdomain do you want to edit?
-      placeholder: ex. something.is-probably.gay
+      description: What subdomain do you want to edit? ex. something.is-probably.gay
       value: ".is-probably.gay"
     validations:
       required: true
