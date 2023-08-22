@@ -18,6 +18,8 @@ jobs:
         EVENT_ISSUE_BODY: ${{ github.event.issue.body }}
         EVENT_USER_LOGIN: ${{ github.event.issue.user.login }}
         CF_TOKEN: ${{ secrets.CF_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-            echo "${{ github.event.issue.description }}"
-            gh issue close https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }}
+            npm i cloudflare
+            node register > data.csv
+            gh issue close https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }} -c `cut -d , -f 2 data.csv` -r `cut -d , -f 1 data.csv`
