@@ -1,0 +1,29 @@
+name: Register
+description: Register a subdomain
+title: "Registration"
+labels: []
+projects: []
+assignees: []
+body:
+  - type: input
+    id: domain
+    attributes:
+      label: Subdomain Name
+      description: What subdomain do you want to register?
+      placeholder: ex. something.is-probably.gay
+      value: ".is-probably.gay"
+    validations:
+      required: true
+  - type: input
+    id: dns
+    attributes:
+      label: DNS Record
+      description: Where should the domain point to? You can type in either an IP address or a domain, and it will automatically detect whether to use A, AAAA, or CNAME.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checked
+    attributes:
+      options:
+        - label: I have checked that no one registered this subdomain
+          required: true
