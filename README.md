@@ -19,3 +19,9 @@ Each account can only register five subdomains.
 2. Fill in the editing form
 3. Submit the issue
 4. After some minutes, your domain should be edited!
+
+# How to Delete a Subdomain
+1. Click [this](https://github.com/is-probably-gay/is-probably-gay/issues/new?template=delete.yml&title=Delete) link to open an issue with a template
+2. Fill in the deleting form
+3. Submit the issue
+4. After some minutes, your domain should be deleted!
