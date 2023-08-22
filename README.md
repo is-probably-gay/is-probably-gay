@@ -1,5 +1,6 @@
 # is-probably.gay Subdomain
-Coming soon!
+Registration works now!
+
 This is the repo for is-probably.gay subdomain registration!
 
 # How to Register
