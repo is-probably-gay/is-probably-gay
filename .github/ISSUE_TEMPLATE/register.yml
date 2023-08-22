@@ -27,7 +27,7 @@ body:
       description: Where should the domain point to? You can type in either an IP address or a domain, and it will automatically detect whether to use A, AAAA, or CNAME.
     validations:
       required: true
-   - type: markdown
+  - type: markdown
     attributes:
       value: "<dns-end><agreement>"
   - type: checkboxes
