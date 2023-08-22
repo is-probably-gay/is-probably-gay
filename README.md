@@ -15,10 +15,7 @@ Fun fact, you actually don't need to search the domain you wanted yourself, the 
 Each account can only register five subdomains.
 
 # How to Edit DNS Record
-COMING SOON
-<!--
 1. Click [this](https://github.com/is-probably-gay/is-probably-gay/issues/new?template=edit.yml&title=Edit) link to open an issue with a template
 2. Fill in the editing form
 3. Submit the issue
 4. After some minutes, your domain should be edited!
--->
