@@ -21,7 +21,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
             npm i cloudflare
-            node register > data.csv
+            node --no-deprecation register > data.csv
             comment=$(cut -d "|" -f 2 data.csv)
             reason=$(cut -d "|" -f 1 data.csv)
             gh issue close https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }} -c $comment -r $reason
