@@ -15,7 +15,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.3.1
       
-    - name: Edit Subdomain
+    - name: Delete Subdomain
       env:
         EVENT_ISSUE_BODY: ${{ github.event.issue.body }}
         EVENT_USER_LOGIN: ${{ github.event.issue.user.login }}
