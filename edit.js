@@ -70,12 +70,17 @@ cf.dnsRecords.browse("2bf779292ec80723b8b7a94bb651ea7d").then((records) => {
       })
       .then((response) => {
         if (!response.success) {
-          return console.log(`not planned|CloudFlare Error:${response.errors[0].message}`)
+          return console.log(
+            `not planned|CloudFlare Error:${response.errors[0].message}`
+          )
         }
         return console.log(
           "completed|Your subdomain has been successfully edited!"
         )
       })
+  } else {
+    return console.log(
+      "not planned|This subdomain is not yours or the subdomain is not found!"
+    )
   }
-  return console.log("not planned|This subdomain is not yours or the subdomain is not found!")
 })
