@@ -1,0 +1,79 @@
+const array = process.env.EVENT_ISSUE_BODY.split("### ")
+const nonascii = /[^\u0000-\u007F]+/
+array.forEach((item, index) => {
+  array[index] = item.split("\n\n")
+})
+const original = array[3][1]
+array[3][1] = original.split("\n")[0]
+array[3].push(original.split("\n")[1])
+if (
+  !(
+    array.length == 4 &&
+    array[0].length == 1 &&
+    array[0][0] == "" &&
+    array[1][0] == "Subdomain Name" &&
+    array[1].length == 3 &&
+    array[2][0] == "DNS Record" &&
+    array[2].length == 3 &&
+    array[3].length == 3 &&
+    array[3][0] == "Agreement" &&
+    array[3][1] ==
+      "- [X] I have ensured that no one registered this subdomain" &&
+    array[3][2] ==
+      "- [X] I have ensured that I did not reach the five subdomain limit" &&
+    !array[1][1].includes(" ") &&
+    !array[2][1].includes(" ") &&
+    !nonascii.test(array[1][1]) &&
+    !nonascii.test(array[2][1]) &&
+    array[1][1] != ".is-probably.gay" &&
+    array[1][1].endsWith(".is-probably.gay")
+  )
+) {
+  return console.log(
+    "2|Format invalid! It's usually because you didn't check the agreements, or the domain/record you entered is invalid!"
+  )
+}
+var flare = require("cloudflare")
+var cf = flare({
+  token: process.env.CF_TOKEN,
+})
+const ipv4 =
+  /^\s*((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))\s*$/gm
+const ipv6 =
+  /^\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*$/gm
+const hostname =
+  /^\s*((?=.{1,255}$)[0-9A-Za-z](?:(?:[0-9A-Za-z]|\b-){0,61}[0-9A-Za-z])?(?:\.[0-9A-Za-z](?:(?:[0-9A-Za-z]|\b-){0,61}[0-9A-Za-z])?)*\.?)\s*$/gm
+cf.dnsRecords.browse("2bf779292ec80723b8b7a94bb651ea7d").then((records) => {
+  const filtered = records.result.filter((record) => {
+    return record.name == array[1][1]
+  })
+  if (filtered[0]) {
+    return console.log(
+      "2|This subdomain was taken, please try another subdomain!"
+    )
+  }
+  var type = "invalid"
+  if (hostname.test(array[1][1])) type = "CNAME"
+  if (ipv4.test(array[1][1])) type = "A"
+  if (ipv6.test(array[1][1])) type = "AAAA"
+  if (type == "invalid") {
+    return console.log("2|The record destination you entered is invalid!")
+  }
+  cf.dnsRecords
+    .add("2bf779292ec80723b8b7a94bb651ea7d", {
+      content: array[2][1],
+      name: array[1][1],
+      proxied: false,
+      type,
+      ttl: 60,
+      comment: process.env.EVENT_USER_LOGIN
+    })
+    .then((response) => {
+      if (!response.success) {
+        return console.log(`2|CloudFlare Error:${response.errors[0].message}`)
+      }
+      console.log(
+        "1|Your subdomain has been successfully registered! Enjoy it!"
+      )
+    })
+})
