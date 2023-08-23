@@ -28,5 +28,5 @@ jobs:
             comment=$(cut -d "|" -f 2 data.csv)
             reason=$(cut -d "|" -f 1 data.csv)
             domain=$(cut -d "|" -f 3 data.csv)
-            gh issue edit https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }} -t "🌈 Get Info $domain" --add-label "domain list"
+            gh issue edit https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }} -t "🌈 Get Info $domain" --add-label "domain get info"
             gh issue close https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }} --comment "$comment" --reason "$reason"
