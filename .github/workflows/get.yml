@@ -1,0 +1,32 @@
+name: "Get Info of Subdomain"
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  Get:
+    runs-on: ubuntu-latest
+    if: github.event.issue.title == 'Get Info'
+    permissions:
+      issues: write
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2.3.1
+      
+    - name: Get Info of Subdomain
+      env:
+        EVENT_ISSUE_BODY: ${{ github.event.issue.body }}
+        EVENT_USER_LOGIN: ${{ github.event.issue.user.login }}
+        CF_TOKEN: ${{ secrets.CF_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+            npm i cloudflare
+            node --no-deprecation get > data.csv
+            cat data.csv
+            comment=$(cut -d "|" -f 2 data.csv)
+            reason=$(cut -d "|" -f 1 data.csv)
+            domain=$(cut -d "|" -f 3 data.csv)
+            gh issue edit https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }} -t "🌈 Get Info $domain" --add-label "domain list"
+            gh issue close https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }} --comment "$comment" --reason "$reason"
