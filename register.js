@@ -30,7 +30,7 @@ if (
   )
 ) {
   return console.log(
-    "not planned|Format invalid! It's usually because you didn't check the agreements, or the domain/record you entered is invalid!"
+    "not planned|Format invalid! It's usually because you didn't check the agreements, or the domain/record you entered is invalid!|"+array[1][1]
   )
 }
 var flare = require("cloudflare")
@@ -49,7 +49,7 @@ cf.dnsRecords.browse("2bf779292ec80723b8b7a94bb651ea7d").then((records) => {
   })
   if (availabilityFilter[0]) {
     return console.log(
-      "not planned|This subdomain was taken, please try another subdomain!"
+      "not planned|This subdomain was taken, please try another subdomain!|"+array[1][1]
     )
   }
   const countFilter = records.result.filter((record) => {
@@ -57,7 +57,7 @@ cf.dnsRecords.browse("2bf779292ec80723b8b7a94bb651ea7d").then((records) => {
   })
   if (countFilter.length == 5) {
     return console.log(
-      "not planned|You have reached your 5 subdomain limit, please consider deleting some."
+      "not planned|You have reached your 5 subdomain limit, please consider deleting some.|"+array[1][1]
     )
   }
   var type = "invalid"
@@ -67,7 +67,7 @@ cf.dnsRecords.browse("2bf779292ec80723b8b7a94bb651ea7d").then((records) => {
   if (type == "hostname"&&!array[1][1].includes(".")) type = "invalid"
   if (type == "invalid") {
     return console.log(
-      "not planned|The record destination you entered is invalid!"
+      "not planned|The record destination you entered is invalid!|"+array[1][1]
     )
   }
   cf.dnsRecords
@@ -81,10 +81,10 @@ cf.dnsRecords.browse("2bf779292ec80723b8b7a94bb651ea7d").then((records) => {
     })
     .then((response) => {
       if (!response.success) {
-        return console.log(`2,CloudFlare Error:${response.errors[0].message}`)
+        return console.log(`not planned|CloudFlare Error:${response.errors[0].message}|${array[1][1]}`)
       }
       console.log(
-        "completed|Your subdomain has been successfully registered! Enjoy it!"
+        "completed|Your subdomain has been successfully registered! Enjoy it!|"+array[1][1]
       )
     })
 })
