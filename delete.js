@@ -29,7 +29,7 @@ if (
   )
 ) {
   return console.log(
-    "not planned|Format invalid! It's usually because you didn't check the agreements, or the domain/record you entered is invalid!"
+    "not planned|Format invalid! It's usually because you didn't check the agreements, or the domain/record you entered is invalid!|"+array[1][1]
   )
 }
 var flare = require("cloudflare")
@@ -49,16 +49,16 @@ cf.dnsRecords.browse("2bf779292ec80723b8b7a94bb651ea7d").then((records) => {
       .then((response) => {
         if (!response.success) {
           return console.log(
-            `not planned|CloudFlare Error:${response.errors[0].message}`
+            `not planned|CloudFlare Error:${response.errors[0].message}|${array[1][1]}`
           )
         }
         return console.log(
-          "completed|Your subdomain has been successfully deleted!"
+          "completed|Your subdomain has been successfully deleted!|"+array[1][1]
         )
       })
   } else {
     return console.log(
-      "not planned|This subdomain is not yours or the subdomain is not found!"
+      "not planned|This subdomain is not yours or the subdomain is not found!|"+array[1][1]
     )
   }
 })
