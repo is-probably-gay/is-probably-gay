@@ -1,0 +1,15 @@
+name: Get Info
+description: Get Info on a Subdomain
+title: "Get"
+labels: []
+projects: []
+assignees: []
+body:
+  - type: input
+    id: domain
+    attributes:
+      label: Subdomain Name
+      description: What subdomain do you want to get info on? ex. something.is-probably.gay
+      value: ".is-probably.gay"
+    validations:
+      required: true
