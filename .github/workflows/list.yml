@@ -1,0 +1,32 @@
+name: "List Subdomain"
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  Register:
+    runs-on: ubuntu-latest
+    if: github.event.issue.title == 'List'
+    permissions:
+      issues: write
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2.3.1
+      
+    - name: List Subdomain
+      env:
+        EVENT_ISSUE_BODY: ${{ github.event.issue.body }}
+        EVENT_USER_LOGIN: ${{ github.event.issue.user.login }}
+        CF_TOKEN: ${{ secrets.CF_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+            npm i cloudflare
+            node --no-deprecation list > data.csv
+            cat data.csv
+            comment=$(cut -d "|" -f 2 data.csv)
+            reason=$(cut -d "|" -f 1 data.csv)
+            gh issue edit https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }} --add-label "domain list"
+            gh issue close https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }} --comment "$comment" --reason "$reason"
+
