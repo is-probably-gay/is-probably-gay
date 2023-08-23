@@ -1,4 +1,4 @@
-<img src="https://github.com/is-probably-gay.png" align="right" width="120"/>
+<img src="https://cdn.jsdelivr.net/gh/googlei18n/noto-emoji/svg/emoji_u1f308.svg" align="right" width="120"/>
 
 # is-probably.gay Subdomain
 This is the repo for is-probably.gay subdomain registration!
