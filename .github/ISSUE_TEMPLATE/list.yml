@@ -5,6 +5,10 @@ labels: []
 projects: []
 assignees: []
 body:
-- type: markdown
+- type: checkboxes
   attributes:
-    value: "Submit issue to continue! You don't have to fill anything."
+    label: Check this to continue
+    description: Because GitHub says a form need to include a non-markdown field, you need to check this checkbox, sorry.
+    options:
+      - label: Check this checkbox
+        required: true
