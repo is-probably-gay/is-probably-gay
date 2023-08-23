@@ -1,6 +1,3 @@
-process.env.EVENT_ISSUE_BODY = `### Subdomain Name
-
-sus.is-probably.gay`
 const array = process.env.EVENT_ISSUE_BODY.split("### ")
 const nonascii = /[^\u0000-\u007F]+/
 array.forEach((item, index) => {
