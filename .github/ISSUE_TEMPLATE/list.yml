@@ -1,0 +1,10 @@
+name: List
+description: List Your Subdomains
+title: "List"
+labels: []
+projects: []
+assignees: []
+body:
+- type: markdown
+  attributes:
+    value: "Submit issue to continue! You don't have to fill anything."
