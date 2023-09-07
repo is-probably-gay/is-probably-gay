@@ -87,5 +87,5 @@ cf.dnsRecords.browse("2bf779292ec80723b8b7a94bb651ea7d").then((records) => {
         "completed|Your subdomain has been successfully registered! Enjoy it!|"+array[1][1]
       )
     })
-    .catch(e=>{return console.log(`not planned|Error occurred! Dump: Domain:${array[1][1] Content:${array[2][1]} Type:${type}|${array[1][1]}`)})
+    .catch(e=>{return console.log(`not planned|Error occurred! Dump: Domain:${array[1][1]} Content:${array[2][1]} Type:${type}|${array[1][1]}`)})
 })
