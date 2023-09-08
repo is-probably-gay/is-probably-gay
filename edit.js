@@ -50,9 +50,9 @@ cf.dnsRecords.browse("2bf779292ec80723b8b7a94bb651ea7d").then((records) => {
   })
   if (availabilityFilter[0]) {
     var type = "invalid"
-    if (hostname.test(array[1][1])) type = "CNAME"
-    if (ipv4.test(array[1][1])) type = "A"
-    if (ipv6.test(array[1][1])) type = "AAAA"
+    if (hostname.test(array[2][1])) type = "CNAME"
+    if (ipv4.test(array[2][1])) type = "A"
+    if (ipv6.test(array[2][1])) type = "AAAA"
     if (type == "hostname" && !array[1][1].includes(".")) type = "invalid"
     if (type == "invalid") {
       return console.log(
