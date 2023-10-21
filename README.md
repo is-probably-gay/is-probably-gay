@@ -1,6 +1,7 @@
 <img src="https://cdn.jsdelivr.net/gh/googlei18n/noto-emoji/svg/emoji_u1f308.svg" align="right" width="120"/>
 
-# is-probably.gay Free Subdomain
+# is-probably.gay Free Subdomain  
+[![Discord](https://img.shields.io/discord/891325967203729472?color=5865F2&label=discord&style=for-the-badge)](https://discord.gg/uQ4UXANnP2)   
 This repository is for registering subdomains on is-probably.gay!
 
 ## How to Register
