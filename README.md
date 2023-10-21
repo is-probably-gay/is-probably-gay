@@ -3,7 +3,7 @@
 # is-probably.gay Free Subdomain  
 [![Discord](https://img.shields.io/discord/891325967203729472?color=5865F2&label=discord&style=for-the-badge)](https://discord.gg/uQ4UXANnP2)   
 This repository is for registering subdomains on is-probably.gay!
-
+* * *
 ## How to Register
 1. First, use the Get Info feature to check if your preferred domain name is available.
 2. Then, click on [this link](https://github.com/is-probably-gay/is-probably-gay/issues/new?template=register.yml&title=Register) to open the registration form.
@@ -36,3 +36,5 @@ Please note that each account is limited to a maximum of five subdomains.
 2. Fill in the form with the domain details you want to know about.
 3. Submit the form.
 4. Within a few minutes, information on that domain will be listed.
+* * *
+![Visitors](https://count.getloli.com/get/@is-probably-gay)
