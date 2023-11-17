@@ -3,6 +3,7 @@
 # is-probably.gay Free Subdomain  
 [![Discord](https://img.shields.io/discord/891325967203729472?color=5865F2&label=discord&style=for-the-badge)](https://discord.gg/uQ4UXANnP2)   
 This repository is for registering subdomains on is-probably.gay!
+
 By using our service, you agree to our [Terms of service](https://github.com/is-probably-gay/is-probably-gay/blob/main/TOS.md).
 * * *
 ## How to Register
