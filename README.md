@@ -1,7 +1,7 @@
 <img src="https://cdn.jsdelivr.net/gh/googlei18n/noto-emoji/svg/emoji_u1f308.svg" align="right" width="120"/>
 
 # is-probably.gay Free Subdomain  
-[![Discord](https://img.shields.io/discord/891325967203729472?color=5865F2&label=discord&style=for-the-badge)](https://discord.gg/uQ4UXANnP2)[![GitHub License](https://img.shields.io/github/license/is-probably-gay/is-probably-gay?style=for-the-badge)](https://github.com/is-probably-gay/is-probably-gay/blob/main/LICENSE) [![GitHub Repo stars](https://img.shields.io/github/stars/is-probably-gay/is-probably-gay?style=for-the-badge)](https://github.com/is-probably-gay/is-probably-gay/stargazers)  
+[![Discord](https://img.shields.io/discord/891325967203729472?color=5865F2&label=discord&style=for-the-badge)](https://discord.gg/uQ4UXANnP2) [![GitHub License](https://img.shields.io/github/license/is-probably-gay/is-probably-gay?style=for-the-badge)](https://github.com/is-probably-gay/is-probably-gay/blob/main/LICENSE) [![GitHub Repo stars](https://img.shields.io/github/stars/is-probably-gay/is-probably-gay?style=for-the-badge)](https://github.com/is-probably-gay/is-probably-gay/stargazers)  
 This repository is for registering subdomains on is-probably.gay!
 
 **By using our service, you agree to our [Terms of service](https://github.com/is-probably-gay/is-probably-gay/blob/main/TOS.md).**
