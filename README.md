@@ -4,10 +4,11 @@
 [![Discord](https://img.shields.io/discord/891325967203729472?color=5865F2&label=discord&style=for-the-badge)](https://discord.gg/uQ4UXANnP2) [![GitHub License](https://img.shields.io/github/license/is-probably-gay/is-probably-gay?style=for-the-badge)](https://github.com/is-probably-gay/is-probably-gay/blob/main/LICENSE) [![GitHub Repo stars](https://img.shields.io/github/stars/is-probably-gay/is-probably-gay?style=for-the-badge)](https://github.com/is-probably-gay/is-probably-gay/stargazers)  
 This repository is for registering subdomains on is-probably.gay!
 
-**By using our service, you agree to our [Terms of service](https://github.com/is-probably-gay/is-probably-gay/blob/main/TOS.md).**
+**By using our service, you agree to our [Terms of Service](https://github.com/is-probably-gay/is-probably-gay/blob/main/TOS.md).**
 * * *
+Just so you know, please do not change the title of issues else it won't work.
 ## How to Register
-1. First, use the Get Info feature to check if your preferred domain name is available.
+1. use the Get Info feature to check if your preferred domain name is available.
 2. Then, click on [this link](https://github.com/is-probably-gay/is-probably-gay/issues/new?template=register.yml&title=Register) to open the registration form.
 3. Fill in the required details on the registration form.
 4. Submit the form.
@@ -31,7 +32,7 @@ Please note that each account is limited to a maximum of five subdomains.
 1. Click on [this link](https://github.com/is-probably-gay/is-probably-gay/issues/new?template=list.yml&title=List) to open a form for listing your subdomains.
 2. Check the checkbox to confirm you want to list your subdomains.
 3. Submit the form.
-4. Within a few minutes, all of your domains will be listed.
+4. Within a few minutes, all your domains will be listed.
 
 ## Getting Domain Info
 1. Click on [this link](https://github.com/is-probably-gay/is-probably-gay/issues/new?template=get.yml&title=Get%20Info) to open a form for getting information on a domain.
