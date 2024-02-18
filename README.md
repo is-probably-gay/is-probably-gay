@@ -40,4 +40,16 @@ Please note that each account is limited to a maximum of five subdomains.
 3. Submit the form.
 4. Within a few minutes, information on that domain will be listed.
 * * *
+
+## Star History
+
+<a href="https://star-history.com/#is-probably-gay/is-probably-gay&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=is-probably-gay/is-probably-gay&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=is-probably-gay/is-probably-gay&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=is-probably-gay/is-probably-gay&type=Date" />
+  </picture>
+</a>
+***
+
 ![Visitors](https://count.getloli.com/get/@is-probably-gay)
