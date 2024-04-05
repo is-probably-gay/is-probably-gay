@@ -17,7 +17,7 @@ if (
 )
   return console.log("not planned|The domain you entered is invalid!|"+array[1][1])
 var flare = require("cloudflare")
-var cf = flare({
+var cf = new flare({
   token: process.env.CF_TOKEN,
 })
 const ipv4 =

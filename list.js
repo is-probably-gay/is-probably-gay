@@ -1,5 +1,5 @@
 var flare = require("cloudflare")
-var cf = flare({
+var cf = new flare({
   token: process.env.CF_TOKEN,
 })
 cf.dnsRecords.browse("2bf779292ec80723b8b7a94bb651ea7d").then((records) => {
