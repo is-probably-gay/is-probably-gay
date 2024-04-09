@@ -35,7 +35,7 @@ if (
 }
 var flare = require("cloudflare")
 var cf = new flare({
-  token: process.env.CF_TOKEN,
+  apiToken: process.env.CF_TOKEN,
 })
 const ipv4 =
   /^\s*((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))\s*$/gm
