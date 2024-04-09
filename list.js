@@ -1,6 +1,6 @@
 var flare = require("cloudflare")
 var cf = new flare({
-  token: process.env.CF_TOKEN,
+  apiToken: process.env.CF_TOKEN,
 })
 cf.dns.records.list({ zone_id: "2bf779292ec80723b8b7a94bb651ea7d" }).then((records) => {
   const availabilityFilter = records.result.filter((record) => {
