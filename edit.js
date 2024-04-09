@@ -32,7 +32,7 @@ if (
   )
 }
 var flare = require("cloudflare")
-var cf = flare({
+var cf = new flare({
   token: process.env.CF_TOKEN,
 })
 const ipv4 =
