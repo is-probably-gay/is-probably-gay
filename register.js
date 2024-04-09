@@ -71,7 +71,7 @@ cf.dns.records.list({ zone_id: "2bf779292ec80723b8b7a94bb651ea7d" }).then((recor
     )
   }
   cf.dns.records
-    .create({ zone_id: "2bf779292ec80723b8b7a94bb651ea7d" }, {
+    .create({
       zone_id: "2bf779292ec80723b8b7a94bb651ea7d",
       content: array[2][1],
       name: array[1][1],
