@@ -81,15 +81,12 @@ cf.dns.records.list({ zone_id: "2bf779292ec80723b8b7a94bb651ea7d" }).then((recor
       comment: process.env.EVENT_USER_LOGIN,
     })
     .then((response) => {
-      if (!response.success) {
+      /* if (!response.success) {
         return console.log(`not planned|CloudFlare Error:${response.errors[0].message}|${array[1][1]}`)
-      }
+      } */
       console.log(
         "completed|Your subdomain has been successfully registered! Enjoy it!|"+array[1][1]
       )
     })
-    .catch((e) =>{
-      console.error(e)
-      return console.log(`not planned|Error occurred! Dump: Domain:${array[1][1]} Content:${array[2][1]} Type:${type}|${array[1][1]}`)
-    })
+    .catch((e) => { return console.log(`not planned|Error occurred! Dump: Domain:${array[1][1]} Content:${array[2][1]} Type:${type}|${array[1][1]}`) })
 })
