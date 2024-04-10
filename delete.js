@@ -47,11 +47,6 @@ cf.dns.records.list({ zone_id: "2bf779292ec80723b8b7a94bb651ea7d" }).then((recor
     cf.dns.records
       .delete(availabilityFilter[0].id, { zone_id: "2bf779292ec80723b8b7a94bb651ea7d" })
       .then((response) => {
-        if (!response.success) {
-          return console.log(
-            `not planned|CloudFlare Error:${response.errors[0].message}|${array[1][1]}`
-          )
-        }
         return console.log(
           "completed|Your subdomain has been successfully deleted!|"+array[1][1]
         )
