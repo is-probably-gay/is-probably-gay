@@ -47,6 +47,7 @@ cf.dns.records
     zone_id: "2bf779292ec80723b8b7a94bb651ea7d",
     name: array[1][1],
     comment: { exact: process.env.EVENT_USER_LOGIN },
+    per_page: 5000000,
   })
   .then((records) => {
     const availabilityFilter = records.result.filter((record) => {
