@@ -15,7 +15,9 @@ if (
     array[1][1].endsWith(".is-probably.gay")
   )
 )
-  return console.log("not planned|The domain you entered is invalid!|"+array[1][1])
+  return console.log(
+    "not planned|The domain you entered is invalid!|" + array[1][1]
+  )
 var flare = require("cloudflare")
 var cf = new flare({
   apiToken: process.env.CF_TOKEN,
@@ -33,20 +35,23 @@ if (ipv6.test(array[1][1])) type = "AAAA"
 if (type == "hostname" && !array[1][1].includes(".")) type = "invalid"
 if (type == "invalid") {
   return console.log(
-    "not planned|The record destination you entered is invalid!|"+array[1][1]
+    "not planned|The record destination you entered is invalid!|" + array[1][1]
   )
 }
-cf.dns.records.list({ zone_id: "2bf779292ec80723b8b7a94bb651ea7d" }).then((records) => {
-  const availabilityFilter = records.result.filter((record) => {
-    return record.name == array[1][1]
+cf.dns.records
+  .list({ zone_id: "2bf779292ec80723b8b7a94bb651ea7d", name: array[1][1] })
+  .then((records) => {
+    const availabilityFilter = records.result.filter((record) => {
+      return record.name == array[1][1]
+    })
+    if (availabilityFilter[0]) {
+      return console.log(
+        `completed|Here's the domain info:\\nRecord Type: ${availabilityFilter[0].type}\\nRecord Content: ${availabilityFilter[0].content}\\nDomain Owner: ${availabilityFilter[0].comment}\\nRegistered On: ${availabilityFilter[0].created_on}\\nLast Modified: ${availabilityFilter[0].modified_on}|${array[1][1]}`
+      )
+    } else {
+      return console.log(
+        "completed|Domain not found! That means you can register it!|" +
+          array[1][1]
+      )
+    }
   })
-  if (availabilityFilter[0]) {
-    return console.log(
-      `completed|Here's the domain info:\\nRecord Type: ${availabilityFilter[0].type}\\nRecord Content: ${availabilityFilter[0].content}\\nDomain Owner: ${availabilityFilter[0].comment}\\nRegistered On: ${availabilityFilter[0].created_on}\\nLast Modified: ${availabilityFilter[0].modified_on}|${array[1][1]}`
-    )
-  } else {
-    return console.log(
-      "completed|Domain not found! That means you can register it!|"+array[1][1]
-    )
-  }
-})

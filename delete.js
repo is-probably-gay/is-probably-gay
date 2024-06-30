@@ -29,31 +29,42 @@ if (
   )
 ) {
   return console.log(
-    "not planned|Format invalid! It's usually because you didn't check the agreements, or the domain/record you entered is invalid!|"+array[1][1]
+    "not planned|Format invalid! It's usually because you didn't check the agreements, or the domain/record you entered is invalid!|" +
+      array[1][1]
   )
 }
 var flare = require("cloudflare")
 var cf = new flare({
   apiToken: process.env.CF_TOKEN,
 })
-cf.dns.records.list({ zone_id: "2bf779292ec80723b8b7a94bb651ea7d" }).then((records) => {
-  const availabilityFilter = records.result.filter((record) => {
-    return (
-      record.name == array[1][1] &&
-      record.comment == process.env.EVENT_USER_LOGIN
-    )
+cf.dns.records
+  .list({
+    zone_id: "2bf779292ec80723b8b7a94bb651ea7d",
+    name: array[1][1],
+    comment: { exact: process.env.EVENT_USER_LOGIN },
   })
-  if (availabilityFilter[0]) {
-    cf.dns.records
-      .delete(availabilityFilter[0].id, { zone_id: "2bf779292ec80723b8b7a94bb651ea7d" })
-      .then((response) => {
-        return console.log(
-          "completed|Your subdomain has been successfully deleted!|"+array[1][1]
-        )
-      })
-  } else {
-    return console.log(
-      "not planned|This subdomain is not yours or the subdomain is not found!|"+array[1][1]
-    )
-  }
-})
+  .then((records) => {
+    const availabilityFilter = records.result.filter((record) => {
+      return (
+        record.name == array[1][1] &&
+        record.comment == process.env.EVENT_USER_LOGIN
+      )
+    })
+    if (availabilityFilter[0]) {
+      cf.dns.records
+        .delete(availabilityFilter[0].id, {
+          zone_id: "2bf779292ec80723b8b7a94bb651ea7d",
+        })
+        .then((response) => {
+          return console.log(
+            "completed|Your subdomain has been successfully deleted!|" +
+              array[1][1]
+          )
+        })
+    } else {
+      return console.log(
+        "not planned|This subdomain is not yours or the subdomain is not found!|" +
+          array[1][1]
+      )
+    }
+  })
