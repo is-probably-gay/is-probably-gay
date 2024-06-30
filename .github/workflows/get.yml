@@ -22,7 +22,7 @@ jobs:
         CF_TOKEN: ${{ secrets.CF_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-            npm i cloudflare
+            npm i cloudflare@3.2.0
             node --no-deprecation get > data.csv
             cat data.csv
             comment=$(cut -d "|" -f 2 data.csv)
