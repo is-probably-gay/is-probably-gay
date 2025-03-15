@@ -1,3 +1,4 @@
+**IMPORTANT NOTICE:** This project is now discontinued and will likely not restart due to funding issues. Sorry for your inconvenience.
 <img src="https://cdn.jsdelivr.net/gh/googlei18n/noto-emoji/svg/emoji_u1f308.svg" align="right" width="120"/>
 
 # is-probably.gay Free Subdomain  
