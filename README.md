@@ -53,4 +53,4 @@ Please note that each account is limited to a maximum of five subdomains.
 
 * * *
 
-![Visitors](https://count.getloli.com/get/@is-probably-gay)
+![Visitors](https://count.getloli.com/get/@possibly-is-gay)

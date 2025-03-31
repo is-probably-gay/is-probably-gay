@@ -1,6 +1,6 @@
 <img src="https://cdn.jsdelivr.net/gh/googlei18n/noto-emoji/svg/emoji_u1f308.svg" align="right" width="120"/>
 
-# is-probably.gay Terms of Service
+# possibly-is.gay Terms of Service
 **1. Acceptable Use:**
    Subdomains must not be used for illegal, malicious, or unethical activities.
 

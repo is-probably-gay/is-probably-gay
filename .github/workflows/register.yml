@@ -28,11 +28,11 @@ jobs:
             comment=$(cut -d "|" -f 2 data.csv)
             reason=$(cut -d "|" -f 1 data.csv)
             domain=$(cut -d "|" -f 3 data.csv)
-            gh issue edit https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }} -t "🌈 Register $domain" --add-label "domain register"
+            gh issue edit https://github.com/possibly-is-gay/possibly-is-gay/issues/${{ github.event.issue.number }} -t "🌈 Register $domain" --add-label "domain register"
             if [ "$reason" = "completed" ]
               then
-                gh issue edit https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }} --add-label "success"
+                gh issue edit https://github.com/possibly-is-gay/possibly-is-gay/issues/${{ github.event.issue.number }} --add-label "success"
               else
-                gh issue edit https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }} --add-label "failed"
+                gh issue edit https://github.com/possibly-is-gay/possibly-is-gay/issues/${{ github.event.issue.number }} --add-label "failed"
             fi
-            gh issue close https://github.com/is-probably-gay/is-probably-gay/issues/${{ github.event.issue.number }} --comment "$comment" --reason "$reason"
+            gh issue close https://github.com/possibly-is-gay/possibly-is-gay/issues/${{ github.event.issue.number }} --comment "$comment" --reason "$reason"

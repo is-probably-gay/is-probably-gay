@@ -9,7 +9,7 @@ body:
     id: domain
     attributes:
       label: Subdomain Name
-      description: What subdomain do you want to get info on? ex. something.is-probably.gay
-      value: ".is-probably.gay"
+      description: What subdomain do you want to get info on? ex. something.possibly-is.gay
+      value: ".possibly-is.gay"
     validations:
       required: true

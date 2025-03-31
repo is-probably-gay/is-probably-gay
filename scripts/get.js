@@ -11,8 +11,8 @@ if (
     array[1][0] == "Subdomain Name" &&
     !array[1][1].includes(" ") &&
     !nonascii.test(array[1][1]) &&
-    array[1][1] != ".is-probably.gay" &&
-    array[1][1].endsWith(".is-probably.gay")
+    array[1][1] != ".possibly-is.gay" &&
+    array[1][1].endsWith(".possibly-is.gay")
   )
 )
   return console.log(
