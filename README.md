@@ -1,3 +1,4 @@
+**NOTICE:** Domains are not available now yet because we are planning to host a NS server by ourselves due to Cloudflare's 200 records limit.
 <img src="https://cdn.jsdelivr.net/gh/googlei18n/noto-emoji/svg/emoji_u1f308.svg" align="right" width="120"/>
 
 # possibly-is.gay Free Subdomain  
